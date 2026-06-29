@@ -1,0 +1,15 @@
+{
+  "id": "INC-2026-0847",
+  "type": "LEASING_VIP",
+  "client": "MERIDIAN FINANCE SA",
+  "montant": 120000,
+  "devise": "EUR",
+  "statut": "OVERDUE",
+  "date_echeance": "2026-06-25",
+  "date_detection": "2026-06-29",
+  "sla_heures": 4,
+  "heures_ecoulees": 3.2,
+  "responsable_actuel": "Service Leasing",
+  "priorite": "HAUTE",
+  "description": "Contrat leasing VIP non régularisé après échéance. Client stratégique. Risque de rupture contractuelle."
+}

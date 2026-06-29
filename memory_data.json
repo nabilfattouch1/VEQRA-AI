@@ -1,0 +1,35 @@
+[
+  {
+    "id": "INC-2026-0731",
+    "date": "2026-06-08",
+    "type": "LEASING_VIP",
+    "client": "ATLAS CREDIT SA",
+    "montant": 95000,
+    "cause": "RIB bancaire manquant",
+    "resolution": "Escalade Data Owner — RIB mis à jour — résolu en 6h",
+    "sla_respecte": false,
+    "delai_resolution_heures": 6
+  },
+  {
+    "id": "INC-2026-0612",
+    "date": "2026-05-20",
+    "type": "LEASING_VIP",
+    "client": "NEXUS INVEST",
+    "montant": 140000,
+    "cause": "Données KYC expirées",
+    "resolution": "Mise à jour documentaire client — résolu en 12h",
+    "sla_respecte": false,
+    "delai_resolution_heures": 12
+  },
+  {
+    "id": "INC-2026-0445",
+    "date": "2026-04-15",
+    "type": "LEASING_VIP",
+    "client": "OMEGA FINANCE",
+    "montant": 78000,
+    "cause": "Validation manager bloquée",
+    "resolution": "Escalade direction — validation obtenue en 3h",
+    "sla_respecte": true,
+    "delai_resolution_heures": 3
+  }
+]
