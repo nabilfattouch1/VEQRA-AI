@@ -1,8 +1,9 @@
 import json
+import os
 from openai import OpenAI
 
 client = OpenAI(
-    api_key="sk-ws-H.PYYLYD.o2lX.MEYCIQDz5wNXaeLYt2gSgD6TBIvPzcMlBWc7BHkppiSSzS0ymwIhANBD04QPHr3GczCEqyYQlaIQSBT-Bs_yRA5v1O6bo1S1",
+    api_key=os.environ.get("DASHSCOPE_API_KEY"),
     base_url="https://dashscope-intl.aliyuncs.com/compatible-mode/v1"
 )
 
