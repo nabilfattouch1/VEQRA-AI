@@ -4,6 +4,17 @@
 
 ---
 
+## 🏆 Hackathon Submission Requirements
+
+| Requirement | Link |
+|---|---|
+| 📄 License | [LICENSE](./LICENSE) (MIT) |
+| 🏗️ Technical Architecture | [ARCHITECTURE.md](./ARCHITECTURE.md) |
+| ☁️ Alibaba Cloud Proof | [ALIBABA_CLOUD_PROOF.md](./ALIBABA_CLOUD_PROOF.md) |
+| 🎯 Track | **MemoryAgent** |
+
+---
+
 ## Demo
 
 **Scénario : Incident leasing VIP 120 000 € résolu en 13 secondes**
