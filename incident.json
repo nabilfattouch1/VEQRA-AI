@@ -9,7 +9,7 @@
   "date_detection": "2026-06-29",
   "sla_heures": 4,
   "heures_ecoulees": 3.2,
-  "responsable_actuel": "Service Leasing",
-  "priorite": "HAUTE",
-  "description": "Contrat leasing VIP non régularisé après échéance. Client stratégique. Risque de rupture contractuelle."
+  "responsable_actuel": "Leasing Department",
+  "priorite": "HIGH",
+  "description": "VIP leasing contract not regularized after due date. Strategic client. Risk of contract termination."
 }

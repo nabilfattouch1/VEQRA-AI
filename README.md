@@ -1,6 +1,6 @@
 # VEQRA AI — Multi-Agent Incident Resolution Platform
 
-> **Hackathon Qwen Cloud** — Résolution d'incidents critiques enterprise en temps réel par orchestration d'agents IA propulsés par **Qwen3-235B**
+> **Qwen Cloud Hackathon** — Real-time resolution of critical enterprise incidents through AI agent orchestration powered by **Qwen3-235B**
 
 ---
 
@@ -17,26 +17,26 @@
 
 ## Demo
 
-**Scénario : Incident leasing VIP 120 000 € résolu en 13 secondes**
+**Scenario: 120,000 € VIP leasing incident resolved in 13 seconds**
 
 ```
-🔴 INCIDENT DÉTECTÉ
-   MERIDIAN FINANCE SA — 120 000 € — OVERDUE
+🔴 INCIDENT DETECTED
+   MERIDIAN FINANCE SA — 120,000 € — OVERDUE
 
-🧠 Memory Agent ...  ✅ 4.2s  → Cas similaire INC-2026-0731 | Cause : RIB bancaire manquant | Confiance : HAUTE
-📊 BI Agent      ...  ✅ 4.8s  → Impact : 420 000 € | SLA restant : 47 min | Criticité : CRITIQUE
-⚡ Action Agent  ...  ✅ 4.1s  → TEAMS_TASK : Data Owner | EMAIL : Direction | POWER_BI_UPDATE : Dashboard
+🧠 Memory Agent ...  ✅ 4.2s  → Similar case INC-2026-0731 | Cause: Missing bank details | Confidence: HIGH
+📊 BI Agent      ...  ✅ 4.8s  → Impact: 420,000 € | SLA remaining: 47 min | Criticality: CRITICAL
+⚡ Action Agent  ...  ✅ 4.1s  → TEAMS_TASK: Data Owner | EMAIL: Management | POWER_BI_UPDATE: Dashboard
 
-✅ ANALYSE COMPLÈTE — 13.1s
+✅ ANALYSIS COMPLETE — 13.1s
 ```
 
 ---
 
-## Description du projet
+## Project Description
 
-VEQRA AI est une plateforme d'orchestration multi-agents conçue pour les entreprises financières. Elle détecte, analyse et résout automatiquement les incidents critiques (retards de paiement, blocages contractuels, anomalies leasing) en combinant trois agents IA spécialisés coordonnés par un orchestrateur central.
+VEQRA AI is a multi-agent orchestration platform designed for financial enterprises. It automatically detects, analyzes, and resolves critical incidents (payment delays, contractual blockers, leasing anomalies) by combining three specialized AI agents coordinated by a central orchestrator.
 
-**Problème résolu :** un incident leasing VIP non détecté ou mal escaladé peut coûter des centaines de milliers d'euros et briser une relation client stratégique. VEQRA AI compresse le cycle de réponse humain (heures → secondes) en mobilisant simultanément la mémoire historique, l'analyse financière et la prise de décision.
+**Problem solved:** an undetected or poorly escalated VIP leasing incident can cost hundreds of thousands of euros and break a strategic client relationship. VEQRA AI compresses the human response cycle (hours → seconds) by simultaneously leveraging historical memory, financial analysis, and decision-making.
 
 ---
 
@@ -45,9 +45,9 @@ VEQRA AI est une plateforme d'orchestration multi-agents conçue pour les entrep
 ```
 ┌─────────────────────────────────────────────────┐
 │                  orchestrator.py                │
-│              (Point d'entrée unique)            │
+│                 (Single entry point)            │
 └────────────┬───────────────────────────────────┘
-             │  charge incident.json + memory_data.json
+             │  loads incident.json + memory_data.json
              │
      ┌───────▼────────────────────────────────────┐
      │                                            │
@@ -63,42 +63,42 @@ VEQRA AI est une plateforme d'orchestration multi-agents conçue pour les entrep
                  + dashboard.html
 ```
 
-| Couche | Rôle |
+| Layer | Role |
 |---|---|
-| **Orchestrateur** | Charge les données, appelle les agents en séquence, produit le rapport final |
-| **Memory Agent** | Retrouve les cas similaires dans l'historique, identifie la cause racine |
-| **BI Agent** | Calcule l'impact financier, la criticité, le SLA restant, le score d'urgence |
-| **Action Agent** | Décide et génère les actions correctives (Teams, Email, Power BI) |
-| **Dashboard** | Visualisation HTML temps réel de l'incident et du statut des agents |
+| **Orchestrator** | Loads data, calls the agents in sequence, produces the final report |
+| **Memory Agent** | Finds similar cases in the history, identifies the root cause |
+| **BI Agent** | Calculates the financial impact, criticality, remaining SLA, urgency score |
+| **Action Agent** | Decides and generates corrective actions (Teams, Email, Power BI) |
+| **Dashboard** | Real-time HTML visualization of the incident and agent statuses |
 
-Tous les agents appellent **Qwen3-235B-A22B** via l'API DashScope (mode compatible OpenAI) et répondent en JSON structuré.
+All agents call **Qwen3-235B-A22B** via the DashScope API (OpenAI-compatible mode) and respond in structured JSON.
 
 ---
 
-## Technologies utilisées
+## Technologies Used
 
-| Technologie | Usage |
+| Technology | Usage |
 |---|---|
-| **Qwen3-235B-A22B** | Modèle de langage — raisonnement de chaque agent |
-| **Alibaba Cloud DashScope** | API d'inférence (compatible OpenAI) |
-| **Python 3.11+** | Runtime des agents |
-| **openai SDK** | Client HTTP vers DashScope |
-| **HTML / CSS / JS** | Dashboard de visualisation |
-| **JSON** | Format d'entrée/sortie inter-agents |
+| **Qwen3-235B-A22B** | Language model — reasoning for each agent |
+| **Alibaba Cloud DashScope** | Inference API (OpenAI-compatible) |
+| **Python 3.11+** | Agent runtime |
+| **openai SDK** | HTTP client for DashScope |
+| **HTML / CSS / JS** | Visualization dashboard |
+| **JSON** | Inter-agent input/output format |
 
 ---
 
-## Structure des fichiers
+## File Structure
 
 ```
 VEQRA-AI/
-├── orchestrator.py       # Point d'entrée — orchestre les 3 agents
-├── memory_agent.py       # Agent mémoire — recherche de cas similaires
-├── bi_agent.py           # Agent BI — analyse financière et criticité
-├── action_agent.py       # Agent action — décision et escalade
-├── dashboard.html        # Interface de visualisation temps réel
-├── incident.json         # Données de l'incident en cours
-├── memory_data.json      # Historique des incidents résolus
+├── orchestrator.py       # Entry point — orchestrates the 3 agents
+├── memory_agent.py       # Memory agent — similar case search
+├── bi_agent.py           # BI agent — financial and criticality analysis
+├── action_agent.py       # Action agent — decision and escalation
+├── dashboard.html        # Real-time visualization interface
+├── incident.json         # Current incident data
+├── memory_data.json      # History of resolved incidents
 └── .gitignore
 ```
 
@@ -106,48 +106,48 @@ VEQRA-AI/
 
 ## Installation
 
-### Prérequis
+### Prerequisites
 
 - Python 3.11+
-- Un compte [Alibaba Cloud / DashScope](https://dashscope.aliyuncs.com/) avec accès Qwen3
+- An [Alibaba Cloud / DashScope](https://dashscope.aliyuncs.com/) account with Qwen3 access
 
-### Étapes
+### Steps
 
 ```bash
-# 1. Cloner le repo
+# 1. Clone the repo
 git clone https://github.com/nabilfattouch1/VEQRA-AI.git
 cd VEQRA-AI
 
-# 2. Installer les dépendances
+# 2. Install dependencies
 pip install openai
 
-# 3. Configurer la clé API
+# 3. Configure the API key
 export DASHSCOPE_API_KEY="sk-xxxxxxxxxxxxxxxxxxxx"
 ```
 
-> Remplacez la valeur de `api_key` dans chaque agent par votre clé, ou mieux — chargez-la depuis une variable d'environnement.
+> Set this environment variable before running any agent — the `api_key` value is loaded from `DASHSCOPE_API_KEY`, never hardcoded.
 
 ---
 
-## Utilisation
+## Usage
 
-### Lancer la démo complète
+### Run the full demo
 
 ```bash
 python orchestrator.py
 ```
 
-### Lancer un agent individuellement
+### Run a single agent
 
 ```bash
-python memory_agent.py   # Analyse mémorielle seule
-python bi_agent.py       # Analyse financière seule
-python action_agent.py   # Génération d'actions seule
+python memory_agent.py   # Memory analysis only
+python bi_agent.py       # Financial analysis only
+python action_agent.py   # Action generation only
 ```
 
-### Modifier le scénario d'incident
+### Modify the incident scenario
 
-Éditez `incident.json` pour tester un autre cas :
+Edit `incident.json` to test another case:
 
 ```json
 {
@@ -161,41 +161,41 @@ python action_agent.py   # Génération d'actions seule
 }
 ```
 
-### Ouvrir le dashboard
+### Open the dashboard
 
-Ouvrez `dashboard.html` directement dans votre navigateur — aucun serveur requis.
+Open `dashboard.html` directly in your browser — no server required.
 
 ---
 
-## Démo — Détail de l'incident
+## Demo — Incident Detail
 
-| Champ | Valeur |
+| Field | Value |
 |---|---|
-| **ID incident** | INC-2026-0847 |
+| **Incident ID** | INC-2026-0847 |
 | **Client** | MERIDIAN FINANCE SA |
-| **Montant** | 120 000 € |
-| **Statut** | OVERDUE |
-| **Échéance** | 25 juin 2026 |
-| **Détection** | 29 juin 2026 |
-| **SLA** | 4h (3h12 déjà écoulées) |
+| **Amount** | 120,000 € |
+| **Status** | OVERDUE |
+| **Due date** | June 25, 2026 |
+| **Detection** | June 29, 2026 |
+| **SLA** | 4h (3h12 already elapsed) |
 
-**Résultats produits par VEQRA AI :**
+**Results produced by VEQRA AI:**
 
-| Agent | Résultat clé | Temps |
+| Agent | Key Result | Time |
 |---|---|---|
-| Memory Agent | Cas similaire : INC-2026-0731 — Cause : RIB bancaire manquant — Confiance : HAUTE | ~4s |
-| BI Agent | Impact estimé : 420 000 € — Criticité : CRITIQUE — Score urgence : 95/100 | ~5s |
-| Action Agent | TEAMS_TASK → Data Owner, EMAIL → Direction, POWER_BI_UPDATE → Dashboard leasing | ~4s |
-| **Total** | **Analyse complète + plan d'action** | **~13s** |
+| Memory Agent | Similar case: INC-2026-0731 — Cause: Missing bank details — Confidence: HIGH | ~4s |
+| BI Agent | Estimated impact: 420,000 € — Criticality: CRITICAL — Urgency score: 95/100 | ~5s |
+| Action Agent | TEAMS_TASK → Data Owner, EMAIL → Management, POWER_BI_UPDATE → Leasing Dashboard | ~4s |
+| **Total** | **Full analysis + action plan** | **~13s** |
 
 ---
 
-## Hackathon Qwen Cloud
+## Qwen Cloud Hackathon
 
-Ce projet a été développé dans le cadre du **Hackathon Qwen Cloud**, organisé par Alibaba Cloud. Il démontre la capacité de Qwen3-235B à alimenter un système multi-agents de niveau production pour des cas d'usage enterprise critiques.
+This project was developed for the **Qwen Cloud Hackathon**, organized by Alibaba Cloud. It demonstrates the ability of Qwen3-235B to power a production-grade multi-agent system for critical enterprise use cases.
 
 ---
 
-## Auteur
+## Author
 
 **Nabil Fattouch** — [github.com/nabilfattouch1](https://github.com/nabilfattouch1)

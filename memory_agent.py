@@ -9,23 +9,23 @@ client = OpenAI(
 
 def memory_agent(incident: dict, historical_cases: list) -> dict:
     prompt = f"""
-Tu es le Memory Agent de VEQRA AI, une plateforme d'orchestration d'agents IA pour entreprises.
-Tu analyses les incidents critiques et tu retrouves les cas similaires dans l'historique.
+You are the Memory Agent of VEQRA AI, an AI agent orchestration platform for enterprises.
+You analyze critical incidents and retrieve similar cases from the history.
 
-INCIDENT EN COURS :
+CURRENT INCIDENT:
 {json.dumps(incident, ensure_ascii=False, indent=2)}
 
-CAS HISTORIQUES DISPONIBLES :
+AVAILABLE HISTORICAL CASES:
 {json.dumps(historical_cases, ensure_ascii=False, indent=2)}
 
-Analyse et réponds UNIQUEMENT en JSON avec cette structure :
+Analyze and respond ONLY in JSON with this structure:
 {{
   "cas_similaire_trouve": true,
   "reference_cas": "INC-XXXX-XXXX",
   "date_cas_similaire": "YYYY-MM-DD",
   "cause_identifiee": "...",
   "solution_appliquee": "...",
-  "confiance": "HAUTE",
+  "confiance": "HIGH",
   "recommandation": "..."
 }}
 """
@@ -45,6 +45,6 @@ if __name__ == "__main__":
     with open("memory_data.json", encoding="utf-8") as f:
         historical = json.load(f)
     
-    print("🧠 Memory Agent en cours d'analyse...")
+    print("🧠 Memory Agent analyzing...")
     result = memory_agent(incident, historical)
     print(json.dumps(result, ensure_ascii=False, indent=2))

@@ -9,19 +9,19 @@ client = OpenAI(
 
 def action_agent(incident: dict, memory_result: dict, bi_result: dict) -> dict:
     prompt = f"""
-Tu es l'Action Agent de VEQRA AI.
-Tu décides les actions correctives immédiates pour résoudre l'incident.
+You are the Action Agent of VEQRA AI.
+You decide the immediate corrective actions to resolve the incident.
 
-INCIDENT :
+INCIDENT:
 {json.dumps(incident, ensure_ascii=False, indent=2)}
 
-ANALYSE MEMORY :
+MEMORY ANALYSIS:
 {json.dumps(memory_result, ensure_ascii=False, indent=2)}
 
-ANALYSE BI :
+BI ANALYSIS:
 {json.dumps(bi_result, ensure_ascii=False, indent=2)}
 
-Réponds UNIQUEMENT en JSON :
+Respond ONLY in JSON:
 {{
   "priorite": "P1",
   "actions": [
@@ -65,18 +65,18 @@ if __name__ == "__main__":
     memory_result = {
         "cas_similaire_trouve": True,
         "reference_cas": "INC-2026-0731",
-        "cause_identifiee": "RIB bancaire manquant",
-        "solution_appliquee": "Escalade Data Owner — résolu en 6h",
-        "confiance": "HAUTE"
+        "cause_identifiee": "Missing bank details",
+        "solution_appliquee": "Data Owner escalation — resolved in 6h",
+        "confiance": "HIGH"
     }
-    
+
     bi_result = {
         "impact_financier_estime": 420000,
         "sla_minutes_restantes": 47,
-        "criticite": "CRITIQUE",
+        "criticite": "CRITICAL",
         "score_urgence": 95
     }
-    
-    print("⚡ Action Agent en cours de décision...")
+
+    print("⚡ Action Agent deciding...")
     result = action_agent(incident, memory_result, bi_result)
     print(json.dumps(result, ensure_ascii=False, indent=2))

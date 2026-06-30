@@ -9,21 +9,21 @@ client = OpenAI(
 
 def bi_agent(incident: dict, memory_result: dict) -> dict:
     prompt = f"""
-Tu es le BI Agent de VEQRA AI.
-Tu analyses l'impact financier et la criticité des incidents enterprise.
+You are the BI Agent of VEQRA AI.
+You analyze the financial impact and criticality of enterprise incidents.
 
-INCIDENT :
+INCIDENT:
 {json.dumps(incident, ensure_ascii=False, indent=2)}
 
-ANALYSE MEMORY AGENT :
+MEMORY AGENT ANALYSIS:
 {json.dumps(memory_result, ensure_ascii=False, indent=2)}
 
-Réponds UNIQUEMENT en JSON :
+Respond ONLY in JSON:
 {{
   "impact_financier_estime": 420000,
   "methode_calcul": "...",
   "sla_minutes_restantes": 47,
-  "criticite": "CRITIQUE",
+  "criticite": "CRITICAL",
   "risque_propagation": "...",
   "kpi_impactes": ["...", "..."],
   "score_urgence": 95
@@ -46,11 +46,11 @@ if __name__ == "__main__":
     memory_result = {
         "cas_similaire_trouve": True,
         "reference_cas": "INC-2026-0731",
-        "cause_identifiee": "RIB bancaire manquant",
-        "solution_appliquee": "Escalade Data Owner — résolu en 6h",
-        "confiance": "HAUTE"
+        "cause_identifiee": "Missing bank details",
+        "solution_appliquee": "Data Owner escalation — resolved in 6h",
+        "confiance": "HIGH"
     }
-    
-    print("📊 BI Agent en cours d'analyse...")
+
+    print("📊 BI Agent analyzing...")
     result = bi_agent(incident, memory_result)
     print(json.dumps(result, ensure_ascii=False, indent=2))

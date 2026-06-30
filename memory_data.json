@@ -5,8 +5,8 @@
     "type": "LEASING_VIP",
     "client": "ATLAS CREDIT SA",
     "montant": 95000,
-    "cause": "RIB bancaire manquant",
-    "resolution": "Escalade Data Owner — RIB mis à jour — résolu en 6h",
+    "cause": "Missing bank details",
+    "resolution": "Data Owner escalation — bank details updated — resolved in 6h",
     "sla_respecte": false,
     "delai_resolution_heures": 6
   },
@@ -16,8 +16,8 @@
     "type": "LEASING_VIP",
     "client": "NEXUS INVEST",
     "montant": 140000,
-    "cause": "Données KYC expirées",
-    "resolution": "Mise à jour documentaire client — résolu en 12h",
+    "cause": "Expired KYC data",
+    "resolution": "Client documentation update — resolved in 12h",
     "sla_respecte": false,
     "delai_resolution_heures": 12
   },
@@ -27,8 +27,8 @@
     "type": "LEASING_VIP",
     "client": "OMEGA FINANCE",
     "montant": 78000,
-    "cause": "Validation manager bloquée",
-    "resolution": "Escalade direction — validation obtenue en 3h",
+    "cause": "Manager validation blocked",
+    "resolution": "Management escalation — validation obtained in 3h",
     "sla_respecte": true,
     "delai_resolution_heures": 3
   }
