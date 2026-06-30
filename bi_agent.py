@@ -46,7 +46,7 @@ if __name__ == "__main__":
     memory_result = {
         "cas_similaire_trouve": True,
         "reference_cas": "INC-2026-0731",
-        "cause_identifiee": "Missing bank details",
+        "cause_identifiee": "Missing RIB (bank account document)",
         "solution_appliquee": "Data Owner escalation — resolved in 6h",
         "confiance": "HIGH"
     }

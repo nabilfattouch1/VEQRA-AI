@@ -5,8 +5,8 @@
     "type": "LEASING_VIP",
     "client": "ATLAS CREDIT SA",
     "montant": 95000,
-    "cause": "Missing bank details",
-    "resolution": "Data Owner escalation — bank details updated — resolved in 6h",
+    "cause": "Missing RIB (bank account document)",
+    "resolution": "Data Owner escalation — RIB updated — resolved in 6h",
     "sla_respecte": false,
     "delai_resolution_heures": 6
   },

@@ -23,7 +23,7 @@
 🔴 INCIDENT DETECTED
    MERIDIAN FINANCE SA — 120,000 € — OVERDUE
 
-🧠 Memory Agent ...  ✅ 4.2s  → Similar case INC-2026-0731 | Cause: Missing bank details | Confidence: HIGH
+🧠 Memory Agent ...  ✅ 4.2s  → Similar case INC-2026-0731 | Cause: Missing RIB | Confidence: HIGH
 📊 BI Agent      ...  ✅ 4.8s  → Impact: 420,000 € | SLA remaining: 47 min | Criticality: CRITICAL
 ⚡ Action Agent  ...  ✅ 4.1s  → TEAMS_TASK: Data Owner | EMAIL: Management | POWER_BI_UPDATE: Dashboard
 
@@ -183,7 +183,7 @@ Open `dashboard.html` directly in your browser — no server required.
 
 | Agent | Key Result | Time |
 |---|---|---|
-| Memory Agent | Similar case: INC-2026-0731 — Cause: Missing bank details — Confidence: HIGH | ~4s |
+| Memory Agent | Similar case: INC-2026-0731 — Cause: Missing RIB — Confidence: HIGH | ~4s |
 | BI Agent | Estimated impact: 420,000 € — Criticality: CRITICAL — Urgency score: 95/100 | ~5s |
 | Action Agent | TEAMS_TASK → Data Owner, EMAIL → Management, POWER_BI_UPDATE → Leasing Dashboard | ~4s |
 | **Total** | **Full analysis + action plan** | **~13s** |
