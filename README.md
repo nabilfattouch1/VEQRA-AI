@@ -1,4 +1,4 @@
-# VEQRA AI — Multi-Agent Incident Resolution Platform
+# VEQRA AI — Enterprise AI Operations Platform
 
 > **Qwen Cloud Hackathon** — Real-time resolution of critical enterprise incidents through AI agent orchestration powered by **Qwen3-235B**
 
@@ -71,7 +71,20 @@ VEQRA AI is a multi-agent orchestration platform designed for financial enterpri
 | **Action Agent** | Decides and generates corrective actions (Teams, Email, Power BI) |
 | **Dashboard** | Real-time HTML visualization of the incident and agent statuses |
 
-All agents call **Qwen3-235B-A22B** via the DashScope API (OpenAI-compatible mode) and respond in structured JSON.
+All agents call **Qwen3-235B-A22B through the Alibaba Cloud DashScope API** (OpenAI-compatible mode) and respond in structured JSON.
+
+---
+
+## Why Qwen
+
+VEQRA AI relies on Qwen because enterprise incident resolution requires:
+
+- long-context reasoning to process incident history and business rules
+- structured JSON outputs for reliable agent-to-agent communication
+- multi-step reasoning to connect cause, impact, and action
+- deterministic orchestration across specialized agents
+
+Qwen3-235B, accessed through Alibaba Cloud DashScope, powers every specialized agent of VEQRA AI.
 
 ---
 
@@ -79,7 +92,7 @@ All agents call **Qwen3-235B-A22B** via the DashScope API (OpenAI-compatible mod
 
 | Technology | Usage |
 |---|---|
-| **Qwen3-235B-A22B** | Language model — reasoning for each agent |
+| **Qwen3-235B-A22B (Alibaba Cloud DashScope)** | Language model — reasoning for each agent |
 | **Alibaba Cloud DashScope** | Inference API (OpenAI-compatible) |
 | **Python 3.11+** | Agent runtime |
 | **openai SDK** | HTTP client for DashScope |
@@ -192,7 +205,13 @@ Open `dashboard.html` directly in your browser — no server required.
 
 ## Qwen Cloud Hackathon
 
-This project was developed for the **Qwen Cloud Hackathon**, organized by Alibaba Cloud. It demonstrates the ability of Qwen3-235B to power a production-grade multi-agent system for critical enterprise use cases.
+This project was developed for the **Qwen Cloud Hackathon**, organized by Alibaba Cloud. It demonstrates the ability of Qwen3-235B, through Alibaba Cloud DashScope, to power a production-grade multi-agent system for critical enterprise use cases.
+
+---
+
+## Hackathon Scope
+
+To keep the project focused for the Qwen Cloud Global AI Hackathon, Microsoft 365 connectors (Teams, SharePoint, Power Automate) are simulated for this demo. The AI reasoning, multi-agent orchestration, prompts, and Alibaba Cloud Qwen API calls are fully operational and real — not mocked.
 
 ---
 
